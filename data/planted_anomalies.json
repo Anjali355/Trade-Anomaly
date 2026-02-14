@@ -1,0 +1,123 @@
+[
+  {
+    "shipment_id": 12,
+    "anomaly_type": "PRICE_MISMATCH",
+    "layer": 1,
+    "severity": "HIGH",
+    "description": "total_fob does not match qty \u00d7 unit_price",
+    "expected_value": 41938.0,
+    "actual_value": 43438.0,
+    "discrepancy": 1500,
+    "cost_if_missed": 1500
+  },
+  {
+    "shipment_id": 33,
+    "anomaly_type": "INCOTERM_FREIGHT_MISMATCH",
+    "layer": 1,
+    "severity": "CRITICAL",
+    "description": "CIF incoterm but freight_cost = 0",
+    "incoterm": "CIF",
+    "freight_cost": 0,
+    "cost_if_missed": 500000
+  },
+  {
+    "shipment_id": 55,
+    "anomaly_type": "INCOTERM_EXW_ERROR",
+    "layer": 1,
+    "severity": "HIGH",
+    "description": "EXW incoterm but seller paid freight",
+    "incoterm": "EXW",
+    "freight_cost": 2500,
+    "cost_if_missed": 2500
+  },
+  {
+    "shipment_id": 91,
+    "anomaly_type": "INVALID_DRAWBACK_CLAIM",
+    "layer": 1,
+    "severity": "CRITICAL",
+    "description": "Shipment rejected but drawback claimed",
+    "customs_status": "rejected",
+    "drawback_claimed": 75000,
+    "cost_if_missed": 112500
+  },
+  {
+    "shipment_id": 44,
+    "anomaly_type": "MISSING_PAYMENT_DATE",
+    "layer": 1,
+    "severity": "MEDIUM",
+    "description": "Payment marked received but no date",
+    "payment_status": "received",
+    "days_to_payment": null,
+    "cost_if_missed": 250000
+  },
+  {
+    "shipment_id": 15,
+    "anomaly_type": "INVALID_HS_CODE_FORMAT",
+    "layer": 1,
+    "severity": "CRITICAL",
+    "description": "HS code has 7 digits instead of 8",
+    "hs_code": "8471300",
+    "expected_length": 8,
+    "actual_length": 7,
+    "cost_if_missed": 500000
+  },
+  {
+    "shipment_id": 67,
+    "anomaly_type": "EXCESSIVE_INSURANCE",
+    "layer": 1,
+    "severity": "LOW",
+    "description": "Insurance is 5% of FOB (normal 0.5-1.5%)",
+    "insurance_amount": 10243.61,
+    "fob_value": 204872.1,
+    "insurance_pct": 5.0,
+    "cost_if_missed": 2500
+  },
+  {
+    "shipment_id": 120,
+    "anomaly_type": "PRICE_OUTLIER",
+    "layer": 2,
+    "severity": "HIGH",
+    "description": "Unit price is 3x higher than normal",
+    "normal_price": 6.99,
+    "anomalous_price": 20.96,
+    "deviation_pct": 200,
+    "cost_if_missed": 50000
+  },
+  {
+    "shipment_id": 180,
+    "anomaly_type": "TRANSIT_TIME_OUTLIER",
+    "layer": 2,
+    "severity": "MEDIUM",
+    "description": "Transit time is 60 days (extreme)",
+    "days_in_transit": 60,
+    "expected_range": "25-35 days",
+    "delay": 30,
+    "cost_if_missed": 100000
+  },
+  {
+    "shipment_id": 200,
+    "anomaly_type": "FREIGHT_COST_OUTLIER",
+    "layer": 2,
+    "severity": "MEDIUM"
+  },
+  {
+    "shipment_id": 120,
+    "anomaly_type": "HS_CODE_PRODUCT_MISMATCH",
+    "layer": 3,
+    "severity": "HIGH"
+  },
+  {
+    "shipment_id": 200,
+    "anomaly_type": "HS_CODE_PRODUCT_MISMATCH",
+    "layer": 3,
+    "severity": "HIGH",
+    "description": "HS code 60022000 (textiles) but product is Stainless Steel Fasteners (material: Stainless Steel)",
+    "claimed_hs_code": "60022000",
+    "claimed_hs_description": "Textile fabrics",
+    "actual_product": "Stainless Steel Fasteners",
+    "actual_material": "Stainless Steel",
+    "actual_product_id": 6,
+    "correct_hs_code": "73181500",
+    "cost_if_missed": 800000
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "provider": "Groq",
+  "model": "llama-3.1-8b-instant",
+  "total_calls": 2,
+  "total_tokens": {
+    "input": 339,
+    "output": 278,
+    "total": 617
+  },
+  "estimated_cost_usd": 0.0001,
+  "breakdown_by_task": {
+    "hs_code_validation": {
+      "calls": 1,
+      "tokens": 0,
+      "description": "Validating HS codes match product descriptions"
+    },
+    "pattern_analysis": {
+      "calls": 1,
+      "tokens": 0,
+      "description": "Cross-shipment pattern analysis for buyers"
+    },
+    "executive_summary": {
+      "calls": 1,
+      "tokens": 617,
+      "description": "Generating executive summary from anomaly report"
+    }
+  },
+  "avg_latency_ms": 821.05,
+  "timestamp": "2026-02-14T09:25:04.221743",
+  "notes": "Analysis run on 2026-02-14 09:25:04. Groq pricing: Free tier with rate limits, paid tiers from $0.05-0.10 per 1M tokens."
+}

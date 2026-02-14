@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-14T11:04:32.470098",
+    "execution_time": 1.116345,
+    "total_anomalies": 14,
+    "llm_calls": 2
+  },
+  "anomalies": [
+    {
+      "shipment_id": 12,
+      "anomaly_type": "PRICE_MISMATCH",
+      "layer": 1,
+      "severity": "HIGH",
+      "evidence": {
+        "quantity": 3226,
+        "unit_price": 13.0,
+        "expected_total_fob": 41938.0,
+        "actual_total_fob": 43438.0,
+        "discrepancy": 1500.0
+      },
+      "impact": "Billing discrepancy of $1500.00. Buyer may dispute payment.",
+      "recommendation": "Verify invoice math. Correct before shipment release."
+    },
+    {
+      "shipment_id": 33,
+      "anomaly_type": "INCOTERM_FREIGHT_MISMATCH",
+      "layer": 1,
+      "severity": "CRITICAL",
+      "evidence": {
+        "incoterm": "CIF",
+        "freight_cost": 0.0,
+        "rule": "CIF = Cost + Insurance + FREIGHT (seller must pay)"
+      },
+      "impact": "Contract breach. Buyer may refuse payment or initiate dispute.",
+      "recommendation": "Verify freight cost with logistics provider. Update invoice."
+    },
+    {
+      "shipment_id": 55,
+      "anomaly_type": "INCOTERM_EXW_ERROR",
+      "layer": 1,
+      "severity": "HIGH",
+      "evidence": {
+        "incoterm": "EXW",
+        "freight_cost": 2500.0,
+        "rule": "EXW = Buyer arranges everything (seller should NOT pay freight)"
+      },
+      "impact": "Unnecessary cost of $2500.00 to exporter.",
+      "recommendation": "Remove freight cost or change incoterm to CIF/DDP."
+    },
+    {
+      "shipment_id": 91,
+      "anomaly_type": "INVALID_DRAWBACK_CLAIM",
+      "layer": 1,
+      "severity": "CRITICAL",
+      "evidence": {
+        "customs_status": "rejected",
+        "drawback_claimed": 75000.0,
+        "rule": "Drawback only valid if customs cleared shipment"
+      },
+      "impact": "False claim of ₹75000. Tax audit risk: ₹112500 penalty.",
+      "recommendation": "Immediately withdraw drawback claim. Consult tax consultant."
+    },
+    {
+      "shipment_id": 44,
+      "anomaly_type": "MISSING_PAYMENT_DATE",
+      "layer": 1,
+      "severity": "MEDIUM",
+      "evidence": {
+        "payment_status": "received",
+        "days_to_payment": null,
+        "issue": "Cannot determine when payment was actually received"
+      },
+      "impact": "Cannot reconcile accounts. Buyer creditworthiness assessment impossible.",
+      "recommendation": "Cross-reference with bank statement. Update days_to_payment."
+    },
+    {
+      "shipment_id": 67,
+      "anomaly_type": "EXCESSIVE_INSURANCE",
+      "layer": 1,
+      "severity": "LOW",
+      "evidence": {
+        "total_fob": 204872.1,
+        "insurance_amount": 10243.61,
+        "percentage": "5.00%",
+        "industry_standard": "0.5-2%"
+      },
+      "impact": "Wasting $6146.17 on over-insurance.",
+      "recommendation": "Negotiate better rates with insurance broker."
+    },
+    {
+      "shipment_id": 15,
+      "anomaly_type": "INVALID_HS_CODE_FORMAT",
+      "layer": 1,
+      "severity": "CRITICAL",
+      "evidence": {
+        "hs_code": "8471300",
+        "length": 7,
+        "contains_letters": false,
+        "expected_format": "8 digits (e.g., 84713000)"
+      },
+      "impact": "Customs cannot process. Port detention and storage charges accumulate.",
+      "recommendation": "Correct HS code immediately. Consult customs broker."
+    },
+    {
+      "shipment_id": 38,
+      "anomaly_type": "PRICE_OUTLIER",
+      "layer": 2,
+      "severity": "MEDIUM",
+      "evidence": {
+        "product_name": "Spice Seasoning Mix",
+        "product_id": 12,
+        "unit_price": 5.47,
+        "standard_price": 6.75,
+        "deviation_percent": "-18.96%",
+        "statistical_bounds": {
+          "lower_bound": 5.495000000000001,
+          "upper_bound": 8.719999999999999,
+          "Q1": 6.785,
+          "Q3": 7.43,
+          "IQR": 0.6449999999999996
+        },
+        "sample_size": 19
+      },
+      "impact": "Invoice discrepancy of $-4450.56. Possible error or premium variant.",
+      "recommendation": "Review pricing with sales team. Verify against product catalog."
+    },
+    {
+      "shipment_id": 120,
+      "anomaly_type": "PRICE_OUTLIER",
+      "layer": 2,
+      "severity": "HIGH",
+      "evidence": {
+        "product_name": "Spice Seasoning Mix",
+        "product_id": 12,
+        "unit_price": 20.96,
+        "standard_price": 6.75,
+        "deviation_percent": "210.52%",
+        "statistical_bounds": {
+          "lower_bound": 5.495000000000001,
+          "upper_bound": 8.719999999999999,
+          "Q1": 6.785,
+          "Q3": 7.43,
+          "IQR": 0.6449999999999996
+        },
+        "sample_size": 19
+      },
+      "impact": "Invoice discrepancy of $71050.00. Possible error or premium variant.",
+      "recommendation": "Review pricing with sales team. Verify against product catalog."
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "PRICE_OUTLIER",
+      "layer": 2,
+      "severity": "HIGH",
+      "evidence": {
+        "product_name": "Stainless Steel Fasteners",
+        "product_id": 6,
+        "unit_price": 45.0,
+        "standard_price": 0.75,
+        "deviation_percent": "5900.00%",
+        "statistical_bounds": {
+          "lower_bound": 0.19000000000000006,
+          "upper_bound": 1.315,
+          "Q1": 0.64,
+          "Q3": 0.865,
+          "IQR": 0.22499999999999998
+        },
+        "sample_size": 15
+      },
+      "impact": "Invoice discrepancy of $153149.25. Possible error or premium variant.",
+      "recommendation": "Review pricing with sales team. Verify against product catalog."
+    },
+    {
+      "shipment_id": 180,
+      "anomaly_type": "TRANSIT_TIME_OUTLIER",
+      "layer": 2,
+      "severity": "CRITICAL",
+      "evidence": {
+        "route": "India → Malaysia",
+        "actual_transit_days": 60,
+        "expected_transit_days": 8,
+        "delay_days": 52,
+        "container_type": "20ft",
+        "statistical_bounds": {
+          "lower_bound": -3,
+          "upper_bound": 22,
+          "Q1": 7,
+          "Q3": 12,
+          "IQR": 5
+        },
+        "sample_size": 30
+      },
+      "impact": "$520 delay cost. Buyer may cancel if delivery misses deadline.",
+      "recommendation": "Check with shipping agent. Investigate root cause of delay."
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "FREIGHT_COST_OUTLIER",
+      "layer": 2,
+      "severity": "HIGH",
+      "evidence": {
+        "route": "India → Australia",
+        "container_type": "20ft",
+        "freight_cost": 16337.76,
+        "median_cost": 2669.465,
+        "excess_over_median": 13668.295,
+        "statistical_bounds": {
+          "lower_bound": -4125.6175,
+          "upper_bound": 7199.52,
+          "Q1": 404.4375,
+          "Q3": 2669.465,
+          "IQR": 2265.0275
+        },
+        "sample_size": 6
+      },
+      "impact": "Overpaid $13668.30. Annualized impact: $164019.54",
+      "recommendation": "Negotiate rates with logistics provider. Consider alternatives."
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "HS_CODE_PRODUCT_MISMATCH",
+      "layer": 3,
+      "severity": "HIGH",
+      "confidence": 1.0,
+      "description": "HS code mismatch: HS code 60022000 (textiles) but material is Stainless Steel",
+      "evidence": {
+        "shipment_id": 200,
+        "is_mismatch": true,
+        "confidence": 1.0,
+        "reason": "HS code 60022000 (textiles) but material is Stainless Steel"
+      },
+      "recommendation": "Verify HS code with customs broker before shipment"
+    },
+    {
+      "shipment_id": 180,
+      "anomaly_type": "EXTREME_TRANSIT_DELAY",
+      "layer": 3,
+      "severity": "MEDIUM",
+      "description": "Extreme transit delay: 60 days (normal: 19 ± 9)",
+      "evidence": {
+        "actual_days": 60,
+        "mean_transit": 19.42,
+        "std_transit": 9.57,
+        "threshold": 48.12
+      },
+      "recommendation": "Investigate shipment delay with logistics provider"
+    }
+  ]
+}

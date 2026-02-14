@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "total_planted_anomalies": 12,
+    "total_detected_anomalies": 14,
+    "correctly_detected": 11,
+    "missed_anomalies_count": 1,
+    "false_positives_count": 3
+  },
+  "metrics": {
+    "precision": 0.7857,
+    "recall": 0.9167,
+    "f1_score": 0.8462,
+    "accuracy": 0.7857
+  },
+  "performance": {
+    "detected_correctly": 11,
+    "missed": 1,
+    "false_positives": 3
+  },
+  "correctly_detected_anomalies": [
+    {
+      "shipment_id": 12,
+      "anomaly_type": "PRICE_MISMATCH",
+      "severity": "HIGH"
+    },
+    {
+      "shipment_id": 33,
+      "anomaly_type": "INCOTERM_FREIGHT_MISMATCH",
+      "severity": "CRITICAL"
+    },
+    {
+      "shipment_id": 55,
+      "anomaly_type": "INCOTERM_EXW_ERROR",
+      "severity": "HIGH"
+    },
+    {
+      "shipment_id": 91,
+      "anomaly_type": "INVALID_DRAWBACK_CLAIM",
+      "severity": "CRITICAL"
+    },
+    {
+      "shipment_id": 44,
+      "anomaly_type": "MISSING_PAYMENT_DATE",
+      "severity": "MEDIUM"
+    },
+    {
+      "shipment_id": 15,
+      "anomaly_type": "INVALID_HS_CODE_FORMAT",
+      "severity": "CRITICAL"
+    },
+    {
+      "shipment_id": 67,
+      "anomaly_type": "EXCESSIVE_INSURANCE",
+      "severity": "LOW"
+    },
+    {
+      "shipment_id": 120,
+      "anomaly_type": "PRICE_OUTLIER",
+      "severity": "HIGH"
+    },
+    {
+      "shipment_id": 180,
+      "anomaly_type": "TRANSIT_TIME_OUTLIER",
+      "severity": "MEDIUM"
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "FREIGHT_COST_OUTLIER",
+      "severity": "MEDIUM"
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "HS_CODE_PRODUCT_MISMATCH",
+      "severity": "HIGH"
+    }
+  ],
+  "missed_anomalies": [
+    {
+      "shipment_id": 120,
+      "anomaly_type": "HS_CODE_PRODUCT_MISMATCH",
+      "severity": "HIGH",
+      "description": ""
+    }
+  ],
+  "false_positive_details": [
+    {
+      "shipment_id": 38,
+      "anomaly_type": "PRICE_OUTLIER",
+      "layer": 2,
+      "severity": "MEDIUM",
+      "evidence": "{'product_name': 'Spice Seasoning Mix', 'product_id': 12, 'unit_price': 5.47, 'standard_price': 6.75, 'deviation_percent': '-18.96%', 'statistical_bounds': {'lower_bound': 5.495000000000001, 'upper_bo",
+      "why_flagged": "Invoice discrepancy of $-4450.56. Possible error or premium variant."
+    },
+    {
+      "shipment_id": 200,
+      "anomaly_type": "PRICE_OUTLIER",
+      "layer": 2,
+      "severity": "HIGH",
+      "evidence": "{'product_name': 'Stainless Steel Fasteners', 'product_id': 6, 'unit_price': 45.0, 'standard_price': 0.75, 'deviation_percent': '5900.00%', 'statistical_bounds': {'lower_bound': 0.19000000000000006, '",
+      "why_flagged": "Invoice discrepancy of $153149.25. Possible error or premium variant."
+    },
+    {
+      "shipment_id": 180,
+      "anomaly_type": "EXTREME_TRANSIT_DELAY",
+      "layer": 3,
+      "severity": "MEDIUM",
+      "evidence": "{'actual_days': 60, 'mean_transit': 19.42, 'std_transit': 9.57, 'threshold': 48.12}",
+      "why_flagged": "N/A"
+    }
+  ],
+  "summary": {
+    "correct_detections": "11/12",
+    "detection_rate": "91.7%",
+    "false_positive_rate": "21.4%"
+  }
+}

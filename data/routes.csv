@@ -1,0 +1,13 @@
+origin,destination,origin_port,destination_port,avg_transit_days,distance_km,shipping_lanes
+India,UAE,Mundra Port,Jebel Ali Port,10,1850,Arabian Sea
+India,Singapore,Port of Cochin,Port of Singapore,7,2200,Arabian Sea / Indian Ocean
+India,USA,JNPT Mumbai,Port of Long Beach,30,11200,Trans-Pacific
+India,UK,JNPT Mumbai,Port of Rotterdam,25,9100,Suez / Mediterranean
+India,Germany,Port of Cochin,Port of Hamburg,27,9400,Suez / Mediterranean
+India,Australia,Port of Chennai,Port of Melbourne,14,5500,Indian Ocean / Tasman Sea
+India,China,JNPT Mumbai,Port of Shanghai,12,2800,Bay of Bengal / South China Sea
+India,Hong Kong,Port of Cochin,Port of Hong Kong,10,2500,Indian Ocean / South China Sea
+India,Malaysia,JNPT Mumbai,Port of Port Klang,8,1900,Arabian Sea / Malacca Strait
+India,Japan,Port of Chennai,Port of Tokyo,15,3600,Indian Ocean / Pacific Ocean
+India,Canada,JNPT Mumbai,Port of Vancouver,32,12500,Trans-Pacific
+India,Netherlands,Port of Cochin,Port of Rotterdam,26,9200,Suez / Mediterranean / Atlantic

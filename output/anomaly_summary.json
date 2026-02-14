@@ -1,0 +1,22 @@
+{
+  "by_type": {
+    "PRICE_OUTLIER": 3,
+    "PRICE_MISMATCH": 1,
+    "INCOTERM_FREIGHT_MISMATCH": 1,
+    "INCOTERM_EXW_ERROR": 1,
+    "INVALID_DRAWBACK_CLAIM": 1,
+    "MISSING_PAYMENT_DATE": 1,
+    "EXCESSIVE_INSURANCE": 1,
+    "INVALID_HS_CODE_FORMAT": 1,
+    "TRANSIT_TIME_OUTLIER": 1,
+    "FREIGHT_COST_OUTLIER": 1,
+    "HS_CODE_PRODUCT_MISMATCH": 1,
+    "EXTREME_TRANSIT_DELAY": 1
+  },
+  "by_severity": {
+    "HIGH": 6,
+    "CRITICAL": 4,
+    "MEDIUM": 3,
+    "LOW": 1
+  }
+}

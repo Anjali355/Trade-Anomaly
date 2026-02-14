@@ -1,0 +1,7 @@
+id,name,country,business_type,credit_limit,avg_payment_days,payment_reliability,contact_email
+1,Acme Electronics Ltd,UAE,Distributor,500000,15,Excellent,procurement@acme-elec.ae
+2,Global Imports Corp,USA,Importer,750000,30,Good,orders@globalimports.us
+3,TechTrade Singapore,Singapore,Distributor,600000,20,Good,procurement@techtrade.sg
+4,European Commerce GmbH,Germany,Wholesaler,900000,45,Average,orders@eurocomm.de
+5,Premium Retail UK Ltd,United Kingdom,Retailer,400000,25,Good,supply@premiumretail.uk
+6,Asia Pacific Trading,Australia,Distributor,550000,35,Average,procurement@aptrade.com.au
