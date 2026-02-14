@@ -50,7 +50,7 @@ python main.py
 3. **Launch the Dashboard**:
 View the results interactively:
 ```bash
-streamlit run app.py
+url : https://trade-anomaly-3gm28lvrt9prfvajdxentz.streamlit.app/
 
 ```
 
